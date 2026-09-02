@@ -1,0 +1,32 @@
+scan:
+  source_analysis: true
+  max_uncompressed_size_mb: 50
+  max_files: 1000
+  allowed_extensions:
+    - ".xml"
+    - ".java"
+    - ".properties"
+    - ".yaml"
+    - ".yml"
+    - ".json"
+    - ".md"
+    - ".txt"
+
+security:
+  fail_on: "critical"   # critical, high, medium, low
+  min_score: 70
+
+database:
+  mode: "online"        # online or offline
+  sqlite_path: "vulnerabilities.db"
+  osv_api_url: "https://api.osv.dev/v1/querybatch"
+  cache_ttl_hours: 24
+
+report:
+  formats:
+    - "html"
+    - "json"
+  output_dir: "./reports"
+
+logging:
+  redact_secrets: true

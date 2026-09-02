@@ -1,0 +1,32 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.example.parent</groupId>
+    <artifactId>parent-project</artifactId>
+    <version>2.0.0</version>
+    <packaging>pom</packaging>
+
+    <properties>
+        <junit.version>5.9.1</junit.version>
+    </properties>
+
+    <modules>
+        <module>submodule-a</module>
+    </modules>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.junit.jupiter</groupId>
+                <artifactId>junit-jupiter</artifactId>
+                <version>${junit.version}</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter</artifactId>
+        </dependency>
+    </dependencies>
+</project>
